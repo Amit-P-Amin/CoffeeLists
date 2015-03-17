@@ -1,11 +1,11 @@
-class App.views.LayoutView extends Backbone.View
-  initialize: (opts) ->
-    @items = opts.data
+class App.views.LayoutView extends Backbone.CompositeView
+  initialize: (options) ->
+    @collection = new App.collections.Items(options.data)
     @render()
 
   render: ->
     @$el.html HandlebarsTemplates['layout']()
 
-    for item in @items
+    for item in @collection.models
       itemView = new App.views.ItemView(item)
-      @$el.find('.main-list').append itemView.render()
+      this.addSubview('.main-list', itemView)

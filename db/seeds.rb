@@ -9,21 +9,24 @@
 Item.create([
   {
     title: 'Item 1',
-    content: 'Item 1 swoops in for the win'
+    content: 'Item 1 swoops in for the win',
+    position: 0
   },
   {
     title: 'Item 2',
-    content: 'Item 2 has no idea what he is doing'
+    content: 'Item 2 has no idea what he is doing',
+    position: 1
   },
   {
     title: 'Item 3',
     content: 'Item 3 is a list of wholesome goodness',
+    position: 2,
     children_attributes: [
       {
         title: 'Item 3.1',
-        content: 'I am a child'
+        content: 'I am a child',
+        position: 0
       }
     ]
   }
 ])
-
