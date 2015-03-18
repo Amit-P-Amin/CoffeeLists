@@ -9,7 +9,7 @@ module Api
       @item.update(item_params)
 
       if @item.save
-        render json: @item
+        render json: @item.build_node
       else
         render json: @item.errors.full_messages, status: 406
       end
@@ -18,7 +18,7 @@ module Api
     private
 
       def item_params
-        params.require(:item).permit(:title, :content)
+        params.require(:item).permit(:title, :content, :id)
       end
 
   end

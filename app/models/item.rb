@@ -21,6 +21,7 @@ class Item < ActiveRecord::Base
 
   def build_node
     item = {}
+    item["id"] = id
     item["title"] = title
     item["content"] = content
     if children.length > 0

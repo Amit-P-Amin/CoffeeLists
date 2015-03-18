@@ -8,29 +8,34 @@
 
 Item.create([
   {
-    title: 'Item 1',
-    content: 'Item 1 swoops in for the win',
+    title: 'Exercise',
+    content: 'Do arm exercises for 30 minutes every other day.',
     position: 0
   },
   {
-    title: 'Item 2',
-    content: 'Item 2 has no idea what he is doing',
+    title: 'Comfort Zone Expansion',
+    content: 'Go outside and ask strangers if they think I am beautiful.',
     position: 1
   },
   {
-    title: 'Item 3',
-    content: 'Item 3 is a list of wholesome goodness',
+    title: 'Make Money',
+    content: 'Savings will only last for another 2 months, so get a job!',
     position: 2,
     children_attributes: [
       {
-        title: 'Item 3.1',
-        content: 'I am a child',
+        title: 'Finish Javascript Game',
+        content: 'Javascript game would be a useful addition to portfolio, but is only 30% done.',
         position: 0
       },
       {
-        title: 'Item 3.2',
-        content: 'I am another child',
-        position: 1
+        title: 'Get More Offers',
+        content: 'I already have an offer from Google. But... who wants one of those? Get an offer from a better company, like LaneEver.',
+        position: 1,
+        children_attributes: [
+          title: 'Apply to More Companies',
+          content: 'Send out at least 100 applications in the next week.',
+          position: 0,
+        ]
       }
     ]
   }

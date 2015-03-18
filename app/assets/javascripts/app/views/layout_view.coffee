@@ -1,10 +1,26 @@
 class CoffeeLists.Views.LayoutView extends Backbone.CompositeView
   initialize: (options) ->
-    @render()
+    @collection.on("change", @render.bind(this))
+
+  events:
+    'click button.close': 'close'
 
   render: ->
-    @$el.html HandlebarsTemplates['layout']()
+    @$el.html(HandlebarsTemplates['layout']())
+    @renderChildren(@collection, '.main-list')
+    this
 
-    for item in @collection.models
+  renderChildren: (items, location) ->
+    for item in items.models
       itemView = new CoffeeLists.Views.ItemView(item)
-      this.addSubview('.main-list', itemView)
+      this.addSubview(location, itemView)
+      if item.items.length > 0
+        location = "#item" + item.id
+        @renderChildren(item.items, location)
+
+  close: ->
+    list = $(event.target).next()
+
+    list.slideUp({
+      "duration": 100
+    });
