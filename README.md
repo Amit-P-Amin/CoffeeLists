@@ -1,6 +1,8 @@
 ### Description
 
-The Lists app allows the user to view and edit nested lists of content.
+This app allows the user to view and edit nested lists of content.
+
+You can see it live here: [here](https://evercoffeelist.herokuapp.com/).
 
 #### Features
 
