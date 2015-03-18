@@ -19,3 +19,4 @@
 //= require_tree ./utilities
 //= require handlebars.runtime
 //= require_tree ./app
+//= require jquery-ui

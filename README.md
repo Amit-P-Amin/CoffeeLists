@@ -7,7 +7,7 @@ This exercise is designed to simulate as closely as possible, the kind of work w
 
 ### Description
 
-The Lists app allows the user to view and edit nested lists of content. 
+The Lists app allows the user to view and edit nested lists of content.
 
 Initial feature list:
 - the user can view root level items
@@ -41,3 +41,12 @@ Fork this repo in github and send us the link to your project once you are done.
 #### Getting Started
 
 You will need to have a working Rails enviornment with sqlite. Once you have cloned the repo, run `rake db:setup`. If you run into any issues getting started, email us and we can help.
+
+#### Notes
+
+- Search out and eliminate bugs
+- Eliminate position data attribute set and get, as not needed
+- Add ability to nest an item, not just a list
+- Improve graphics
+- Allow addition of an item
+- Use SQL or ActiveRecord to get necessary values, not enumerable methods

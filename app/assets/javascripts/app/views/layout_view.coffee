@@ -8,18 +8,24 @@ class CoffeeLists.Views.LayoutView extends Backbone.CompositeView
 
   render: ->
     @$el.html(HandlebarsTemplates['layout']())
-    @renderChildren(@collection, '.main-list')
+    @renderChildren(@collection)
     this
 
   renderChildren: (items, location) ->
     for item in items.models
       itemView = new CoffeeLists.Views.ItemView(item)
+      parent_id = item.get("parent_id")
+
+      if parent_id == null
+        location = '.main-list'
+      else
+        location = "#item" + parent_id
       this.addSubview(location, itemView)
       if item.items.length > 0
-        location = "#item" + item.id
         @renderChildren(item.items, location)
 
-  close: ->
+  close: (event) ->
+    event.preventDefault()
     button = $(event.target)
     list = button.next()
     button.text('+')
@@ -29,7 +35,8 @@ class CoffeeLists.Views.LayoutView extends Backbone.CompositeView
       "duration": 150
     });
 
-  open: ->
+  open: (event) ->
+    event.preventDefault()
     button = $(event.target)
     list = button.next()
     button.text('-')

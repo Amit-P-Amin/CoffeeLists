@@ -15,6 +15,19 @@ module Api
       end
     end
 
+    def re_order
+      @item = Item.find_by_id(params[:currentItemId])
+      @priorItem = Item.find_by_id(params[:priorItemId])
+      
+      if @item.parent_id != @priorItem.parent_id
+        @item.swap_list(@priorItem)
+      else
+        @item.swap_position(@priorItem)
+      end
+
+      render json: @item
+    end
+
     private
 
       def item_params

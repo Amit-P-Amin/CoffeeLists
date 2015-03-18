@@ -46,7 +46,7 @@ button {
 button.toggle {
   margin-top: 5px;
   position: relative;
-  float: left
+  margin-bottom: 10px;
 }
 
 textarea {

@@ -1,19 +1,26 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Item.create([
   {
     title: 'Exercise',
-    content: 'Do arm exercises for 30 minutes every other day.',
-    position: 0
+    content: 'Need to build strength and endurance to keep up with Lydia.',
+    position: 0,
+    children_attributes: [
+      {
+        title: 'Go Running',
+        content: 'At least 1 mile.',
+        position: 0
+      },
+      {
+        title: 'Do Lydia Launches',
+        content: 'Throw her in the air 50 times.',
+        position: 1,
+      }
+    ]
   },
   {
-    title: 'Comfort Zone Expansion',
+    title: 'Ego Deflation',
     content: 'Go outside and ask strangers if they think I am beautiful.',
     position: 1
   },
@@ -24,7 +31,7 @@ Item.create([
     children_attributes: [
       {
         title: 'Finish Javascript Game',
-        content: 'Javascript game would be a useful addition to portfolio, but is only 30% done.',
+        content: 'Javascript game would be a useful addition to my portfolio, but is only 30% done.',
         position: 0
       },
       {
@@ -38,5 +45,10 @@ Item.create([
         ]
       }
     ]
+  },
+  {
+    title: 'Eat Pizza',
+    content: 'Need to gain weight.',
+    position: 3,
   }
 ])
