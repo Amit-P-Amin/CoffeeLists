@@ -4,6 +4,7 @@ class CoffeeLists.Views.LayoutView extends Backbone.CompositeView
 
   events:
     'click button.close': 'close'
+    'click button.open': 'open'
 
   render: ->
     @$el.html(HandlebarsTemplates['layout']())
@@ -19,8 +20,21 @@ class CoffeeLists.Views.LayoutView extends Backbone.CompositeView
         @renderChildren(item.items, location)
 
   close: ->
-    list = $(event.target).next()
-
+    button = $(event.target)
+    list = button.next()
+    button.text('+')
+    button.removeClass("close")
+    button.addClass("open")
     list.slideUp({
-      "duration": 100
+      "duration": 150
+    });
+
+  open: ->
+    button = $(event.target)
+    list = button.next()
+    button.text('-')
+    button.removeClass("open")
+    button.addClass("close")
+    list.slideDown({
+      "duration": 150
     });

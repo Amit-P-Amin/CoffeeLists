@@ -43,6 +43,12 @@ button {
   border: 1px solid #808080;
 }
 
+button.toggle {
+  margin-top: 5px;
+  position: relative;
+  float: left
+}
+
 textarea {
   border: 2px solid;
   border-color: #72ce3f;
@@ -58,5 +64,5 @@ input {
   font: normal 16px/1.5em 'PT Serif', arial, sans-serif;
   border-radius: 5px;
   padding-left: 10px;
-  min-width: 300px; 
+  min-width: 300px;
 }
