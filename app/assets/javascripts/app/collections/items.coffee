@@ -1,2 +1,2 @@
-class App.models.Item extends Backbone.Model
-  urlroot: 'items/'
+class CoffeeLists.Models.Item extends Backbone.Model
+  urlroot: 'api/items/'

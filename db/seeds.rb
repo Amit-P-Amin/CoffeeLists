@@ -26,6 +26,11 @@ Item.create([
         title: 'Item 3.1',
         content: 'I am a child',
         position: 0
+      },
+      {
+        title: 'Item 3.2',
+        content: 'I am another child',
+        position: 1
       }
     ]
   }

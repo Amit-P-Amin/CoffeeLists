@@ -1,4 +1,4 @@
-class App.views.ItemView extends Backbone.View
+class CoffeeLists.Views.ItemView extends Backbone.View
   initialize: (item) ->
     @item = item
     @data = {title: @item.escape("title"), content: @item.escape("content")}

@@ -9,8 +9,25 @@ class Item < ActiveRecord::Base
     where(parent_id: nil)
   }
 
-  def serialize
-    to_json
+  def self.build_branch(items)
+    nodes = []
+
+    items.each do |item|
+      nodes << item.build_node
+    end
+
+    nodes
+  end
+
+  def build_node
+    item = {}
+    item["title"] = title
+    item["content"] = content
+    if children.length > 0
+      item["items"] = Item.build_branch(children)
+    end
+
+    item
   end
 
 end

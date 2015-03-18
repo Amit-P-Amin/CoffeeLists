@@ -15,8 +15,7 @@
 //= require turbolinks
 //= require underscore
 //= require backbone
+//= require coffee_lists
 //= require_tree ./utilities
 //= require handlebars.runtime
-//= require setup
 //= require_tree ./app
-//= require main
