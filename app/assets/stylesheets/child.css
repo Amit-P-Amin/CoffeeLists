@@ -1,0 +1,20 @@
+.child .child {
+  border-left: 2px #fee531 solid;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 10px;
+  padding: 10px;
+}
+
+.child {
+  border-left: 2px #FF5959 solid;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 10px;
+  padding: 10px;
+}
+
+.main-list {
+  border-left: 2px #fe3881 solid;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 10px;
+  padding: 10px;
+}

@@ -16,6 +16,16 @@ h2.title {
   margin-left: 10px;
 }
 
+.child .edit-item, .child .update-item {
+  float: right;
+  margin-right: 76px;
+}
+
+.child .child .edit-item, .child .child .update-item {
+  float: right;
+  margin-right: 138px;
+}
+
 p {
   clear:both;
 }

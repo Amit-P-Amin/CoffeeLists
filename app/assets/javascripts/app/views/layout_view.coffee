@@ -26,22 +26,26 @@ class CoffeeLists.Views.LayoutView extends Backbone.CompositeView
 
   close: (event) ->
     event.preventDefault()
+
     button = $(event.target)
-    list = button.next()
     button.text('+')
     button.removeClass("close")
     button.addClass("open")
+
+    list = button.next()
     list.slideUp({
       "duration": 150
     });
 
   open: (event) ->
     event.preventDefault()
+
     button = $(event.target)
-    list = button.next()
     button.text('-')
     button.removeClass("open")
     button.addClass("close")
+
+    list = button.next()
     list.slideDown({
       "duration": 150
     });
